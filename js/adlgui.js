@@ -20,7 +20,7 @@
     channel: ''
   };
 
-  var domain = 'https://crossorigin.me/http://magic.newtsin.space:32895/access/';
+  var domain = 'http://cors.io/?u=http://magic.newtsin.space:32895/access/';
   
   var Logs = [];
   var AllLogs = [];
@@ -158,8 +158,7 @@
             var message = item.message.toLowerCase();
             var character = item.character.toLowerCase();
             
-            if (character.indexOf(lName) > -1) return true;
-            if (message.indexOf(lQuery) > -1) return true;
+            if (lName && character.indexOf(lName) > -1 || lQuery && message.indexOf(lQuery) > -1) return true;
             return false;
           })
           .slice(0, limit);
