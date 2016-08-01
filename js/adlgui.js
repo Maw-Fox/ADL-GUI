@@ -156,13 +156,13 @@
         var limit = this.limit;
         var logs = this.Logs;
 
-        if (debounce) return logs;
+        if (debounced) return logs;
 
         setTimeout(function() {
-          debounce = false;
+          debounced = false;
         }, 250);
         
-        debounce = true;
+        debounced = true;
 
         if (lName) 
           logs = logs.filter(function(item) {
