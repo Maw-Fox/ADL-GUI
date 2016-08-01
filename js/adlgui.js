@@ -6,6 +6,8 @@
 
   var request = superagent;
 
+  var debounced = false;
+
   var Search = {
     Name: '',
     Query: '',
@@ -152,21 +154,27 @@
         var lName = this.Name.toLowerCase();
         var lQuery = this.Query.toLowerCase();
         var limit = this.limit;
+        var logs = this.Logs;
 
-        return this.Logs
-          .filter(function(item) {
-            var character = item.character.toLowerCase();
-            
-            if (lName && character.indexOf(lName) > -1) return true;
-            return false;
-          })
-          .filter(function(item) {
-            var message = item.message.toLowerCase();
+        if (debounce) return logs;
 
-            if (lQuery && message.indexOf(lQuery) > -1) return true;
-            return false;
-          })
-          .slice(0, limit);
+        setTimeout(function() {
+          debounce = false;
+        }, 250);
+        
+        debounce = true;
+
+        if (lName) 
+          logs = logs.filter(function(item) {
+            return item.character.toLowerCase().indexOf(lName) > -1;
+          });
+        
+        if (lQuery)
+          logs = logs.filter(function(item) {
+            return item.message.toLowerCase().indexOf(lQuery) > -1;
+          });
+
+        return logs.slice(0, limit);
       }
     },
     methods: {
