@@ -20,7 +20,7 @@
     channel: ''
   };
 
-  var domain = 'http://cors.io/?u=http://magic.newtsin.space:32895/access/';
+  var domain = 'https://crossorigin.me/http://magic.newtsin.space:32895/access/';
   
   var Logs = [];
   var AllLogs = [];
@@ -83,7 +83,6 @@
               var fileName = log.fileURI.slice(log.fileURI.lastIndexOf('/'), log.fileURI.length);
               request
                 .get(log.fileURI)
-                .type('text/plaintext')
                 .end(function(error, response) {
                   if (error) {
                     setTimeout(function() {getLog()}, wait);
