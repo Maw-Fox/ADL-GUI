@@ -151,10 +151,11 @@
       filtered: function() {
         return this.Logs
           .filter(function(item) {
-            var lItem = item.toLowerCase();
-
-            if (lItem.indexOf(lName) > -1) return true;
-            if (lItem.indexOf(lQuery) > -1) return true;
+            var message = item.message.toLowerCase();
+            var character = item.character.toLowerCase();
+            
+            if (character.indexOf(lName) > -1) return true;
+            if (message.indexOf(lQuery) > -1) return true;
             return false;
         });
       }
