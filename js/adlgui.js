@@ -143,17 +143,11 @@
       Logs: AllLogs,
       backlog: 0,
       limit: 200,
-      channel: ''
+      channel: '',
+      Name: '',
+      Query: ''
     },
     computed: {
-      Query: {
-        get: function() {
-          return Search.Query;
-        },
-        set: function(nV) {
-          return Search.Query = nV;
-        }
-      },
       filtered: function() {
         return this.Logs
           .filter(function(item) {
