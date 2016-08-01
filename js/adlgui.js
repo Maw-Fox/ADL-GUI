@@ -142,7 +142,7 @@
       Search: Search,
       Logs: AllLogs,
       backlog: 0,
-      limit: 200,
+      limit: 500,
       channel: '',
       Name: '',
       Query: ''
