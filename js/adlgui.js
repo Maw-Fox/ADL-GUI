@@ -149,6 +149,10 @@
     },
     computed: {
       filtered: function() {
+        var lName = this.Name.toLowerCase();
+        var lQuery = this.Query.toLowerCase();
+        var limit = this.limit;
+
         return this.Logs
           .filter(function(item) {
             var message = item.message.toLowerCase();
@@ -157,7 +161,8 @@
             if (character.indexOf(lName) > -1) return true;
             if (message.indexOf(lQuery) > -1) return true;
             return false;
-        });
+          })
+          .slice(0, limit);
       }
     },
     methods: {
