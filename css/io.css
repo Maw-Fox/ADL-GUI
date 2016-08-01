@@ -1,0 +1,261 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: Ubuntu;
+}
+
+body {
+  width: 100%;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.head {
+  z-index: 4;
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+  padding: 6px;
+  border-bottom: 1px solid rgba(0,80,80,0.3);
+  background: rgba(0,80,80,0.5);
+  width: 232px;
+  margin-top: 2px;
+  margin-left: 2px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.percent-loaded {
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-right: 2px;
+  transition: all 0.5s ease;
+  background: #fff;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.green-text {
+  color: rgba(0,75,0,0.75);
+}
+
+.orange-text {
+  color: rgba(150,50,50,0.75);
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+input[type=text] {
+  font-style: italic;
+  width: 232px;
+  height: 30px;
+  padding-left: 5px;
+  background: rgba(0,80,80,0.2);
+  border: 1px solid rgba(0,80,80,0.6);
+  border-radius: 3px;
+  transition: 0.1s ease all;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+input[type=button] {
+  width: 30px;
+  height: 30px;
+  background: rgba(0,80,80,0.2);
+  border: 1px solid rgba(0,80,80,0.7);
+  border-radius: 3px;
+  transition: 0.1s ease all;
+}
+
+input[type=button]:hover {
+  background: rgba(0,80,80,0.4);
+}
+
+input[type=text]:focus {
+  background: rgba(0,80,80,0.4);
+  font-style: normal;
+}
+
+#search {
+  margin-left: 2px;
+  margin-top: 2px;
+  width: 232px;
+  height: 30px;
+}
+
+.query-under {
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: -1;
+  width: 237px;
+  height: 100%;
+  background: rgba(225,255,255,0.7);
+  border-right: 1px solid rgba(0,80,80,0.6);
+}
+
+.query {
+  z-index: 2;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 236px;
+}
+
+.results {
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+  right: 0px;
+  width: calc(100% - 237px);
+  width: -webkit-calc(100% - 237px);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.results .result {
+  border: 1px solid rgba(0,80,80,0.6);
+  background: rgba(0,110,110,0.25);
+  margin: 2px;
+  min-height: 30px;
+  border-radius: 3px;
+}
+
+.results .result .name {
+  color: rgba(0,80,80,0.7);
+  font-weight: bold;
+}
+
+.results .result .message {
+  color: rgba(0,80,80,0.75);
+  font-size: 12px;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+}
+
+.timestamp {
+  color: rgba(255,255,255,0.9);
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+  padding-bottom: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 10px;
+  border-bottom: 1px solid rgba(0,80,80,0.3);
+  background: rgba(0,80,80,0.5);
+}
+
+.timestamp.main,
+.timestamp.add-backlog {
+  font-size: 12px;
+  margin-top: 2px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.timestamp.add-backlog {
+  height: 25px;
+  padding-top: 2px;
+}
+
+input.slide-button {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  padding-bottom: 1px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+  font-weight: bold;
+}
+
+.range-text {
+  display: inline-block;
+  width: 186px;
+  margin-left: 19px;
+}
+
+.timestamp.set-visible-limit {
+  height: 24px;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 3px;
+}
+
+.timestamp.set-visible-limit span {
+  position: relative;
+  float: right;
+  top: 3px;
+  right: 47px;
+  margin-right: 3px;
+}
+
+.timestamp.set-visible-limit input {
+  font-style: normal;
+  display: inline-block;
+  float: right;
+  position: relative;
+  height: 18px;
+  width: 30px;
+  padding-left: 4px;
+  top: 1px;
+  left: 2px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+}
+
+.sub-filters {
+  width: 232px;
+  margin-left: 2px;
+  border-radius: 3px;
+  margin-top: 2px;
+  padding: 0px;
+}
+
+.add-subfilter {
+  color: rgba(50,225,200,0.95);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sub-filters-head {
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 1px;
+  background: rgba(0,80,80,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.sub-filter {
+  padding-left: 4px;
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+
+.sub-filter:hover {
+  background: rgba(0,120,120,0.2);
+}
+
+.timestamp.entries {
+  width: 232px;
+  margin-left: 2px;
+  padding-top: 1px;
+  border-radius: 3px;
+  position: fixed;
+  bottom: 2px;
+}
