@@ -83,6 +83,7 @@
               var fileName = log.fileURI.slice(log.fileURI.lastIndexOf('/'), log.fileURI.length);
               request
                 .get(log.fileURI)
+                .type('text/html')
                 .end(function(error, response) {
                   if (error) {
                     setTimeout(function() {getLog()}, wait);
