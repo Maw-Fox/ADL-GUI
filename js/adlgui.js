@@ -155,10 +155,15 @@
 
         return this.Logs
           .filter(function(item) {
-            var message = item.message.toLowerCase();
             var character = item.character.toLowerCase();
             
-            if (lName && character.indexOf(lName) > -1 || lQuery && message.indexOf(lQuery) > -1) return true;
+            if (lName && character.indexOf(lName) > -1) return true;
+            return false;
+          })
+          .filter(function(item) {
+            var message = item.message.toLowerCase();
+
+            if (lQuery && message.indexOf(lQuery) > -1) return true;
             return false;
           })
           .slice(0, limit);
