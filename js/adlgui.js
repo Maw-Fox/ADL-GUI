@@ -136,8 +136,6 @@
     queue.push(lURI);
   };
 
-  getLogsFor(logURI);
-
   var View = new Vue({
     el: '#app',
     data: {
@@ -217,4 +215,6 @@
       pad: pad
     }
   });
+
+  return getLogsFor(logURI);
 }());
