@@ -35,6 +35,14 @@
   var month = currentTime.getMonth() + 1;
   var year = currentTime.getFullYear();
 
+  function pad(num, by) {
+    num = num + '';
+    while(num.length < by) {
+      num = '0' + num;
+    }
+    return num;
+  }
+
   Search.date = `[${year}/${pad(month, 2)}/${pad(day, 2)}]`;
   Search.oldestDate = `[${year}/${pad(month, 2)}/${pad(day, 2)}]`;
 
